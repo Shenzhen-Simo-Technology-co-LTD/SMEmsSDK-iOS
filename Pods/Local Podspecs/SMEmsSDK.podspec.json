@@ -1,0 +1,21 @@
+{
+  "name": "SMEmsSDK",
+  "version": "1.0.0",
+  "summary": "A iOS SDK and Demo to Control SIMO EMS device via BLE.",
+  "homepage": "https://github.com/Shenzhen-Simo-Technology-co-LTD/SMEmsSDK-iOS",
+  "license": "MIT",
+  "authors": {
+    "GrayLand": "441726442@qq.com"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source": {
+    "git": "https://github.com/Shenzhen-Simo-Technology-co-LTD/SMEmsSDK-iOS.git",
+    "tag": "1.0.0"
+  },
+  "source_files": "SMEmsSDK/SMEmsSDK.framework/**/*.{h}",
+  "vendored_frameworks": "SMEmsSDK/SMEmsSDK.framework",
+  "public_header_files": "SMEmsSDK/SMEmsSDK.framework/Headers/*.h",
+  "requires_arc": true
+}

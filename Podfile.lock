@@ -1,0 +1,38 @@
+PODS:
+  - GLDemoUIKit (0.0.6):
+    - PKHUD (~> 5.3.0)
+    - SnapKit (~> 5.0.1)
+    - YYCategories (~> 1.0.4)
+  - PKHUD (5.3.0)
+  - SMEmsSDK (1.0.0)
+  - SnapKit (5.0.1)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+
+DEPENDENCIES:
+  - GLDemoUIKit (~> 0.0.6)
+  - SMEmsSDK (from `./`)
+
+SPEC REPOS:
+  https://github.com/GrayLand119/GLSpecs.git:
+    - GLDemoUIKit
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+    - PKHUD
+    - SnapKit
+    - YYCategories
+
+EXTERNAL SOURCES:
+  SMEmsSDK:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  GLDemoUIKit: e739164311678738e947d22df2a5ce5858d260b4
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
+  SMEmsSDK: 0e7a8445739dca90172c1d1bf02c173ce38b1865
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+
+PODFILE CHECKSUM: ec47ea8eb3783c92b0d459f7a4c84965a9efde31
+
+COCOAPODS: 1.9.3

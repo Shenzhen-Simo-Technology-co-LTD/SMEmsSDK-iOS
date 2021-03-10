@@ -1,0 +1,6 @@
+framework module GLDemoUIKit {
+  umbrella header "GLDemoUIKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
