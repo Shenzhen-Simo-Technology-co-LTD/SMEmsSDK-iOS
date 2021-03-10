@@ -14,8 +14,10 @@ target 'SMEmsDemo' do
 #  pod 'RxSwift', '6.1.0'
 #  pod 'RxCocoa', '6.1.0'
   
-#  pod 'SMEmsSDK-iOS'
-  pod 'SMEmsSDK', :path => "./"
+  # Work fine, latest.
+  pod 'SMEmsSDK', :git => "https://github.com/Shenzhen-Simo-Technology-co-LTD/SMEmsSDK-iOS.git"
+  # pod 'SMEmsSDK'
+#  pod 'SMEmsSDK', :path => "./"
   
   target 'SMEmsDemoTests' do
     inherit! :search_paths

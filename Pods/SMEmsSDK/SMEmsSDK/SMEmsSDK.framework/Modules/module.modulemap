@@ -1,0 +1,11 @@
+framework module SMEmsSDK {
+  umbrella header "SMEmsSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module SMEmsSDK.Swift {
+    header "SMEmsSDK-Swift.h"
+    requires objc
+}
