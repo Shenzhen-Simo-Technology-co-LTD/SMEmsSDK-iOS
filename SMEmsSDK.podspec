@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "SMEmsSDK"
-  spec.version      = "1.0.0"
+  spec.version      = "1.1.0"
   spec.summary      = "A iOS SDK and Demo to Control SIMO EMS device via BLE."
   spec.homepage     = "https://github.com/Shenzhen-Simo-Technology-co-LTD/SMEmsSDK-iOS"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"

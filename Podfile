@@ -29,3 +29,20 @@ target 'SMEmsDemo' do
   end
 
 end
+
+target 'SMEmsDemoOC' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for SMEmsDemo
+  pod "GLDemoUIKit", '~>0.0.6'
+  pod "Masonry"
+#  pod 'RxSwift', '6.1.0'
+#  pod 'RxCocoa', '6.1.0'
+  
+  # Work fine, latest.
+  pod 'SMEmsSDK', :git => "https://github.com/Shenzhen-Simo-Technology-co-LTD/SMEmsSDK-iOS.git"
+  # pod 'SMEmsSDK'
+#  pod 'SMEmsSDK', :path => "./"
+  
+end

@@ -8,12 +8,15 @@
 import UIKit
 import SMEmsSDK
 import SnapKit
+//import GLDemoUIKit
+import PKHUD
+import RxSwift
+import RxCocoa
 
-class ConnectedViewController: UITableViewController {
+class ConnectedViewController: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet var infoCells: [UITableViewCell]!
     
-    //    @IBOutlet weak var exerciseModeCell: UITableViewCell!
     @IBOutlet weak var exerciseModeCell: UITableViewCell!
     @IBOutlet weak var exerciseModeSegment: UISegmentedControl!
     
@@ -36,12 +39,18 @@ class ConnectedViewController: UITableViewController {
     @IBOutlet weak var massageSwitch: UISwitch!
     @IBOutlet weak var extendModeCell: UITableViewCell!
     
+    @IBOutlet weak var advanceConfigCell: UITableViewCell!
+    @IBOutlet var presetConfigTF: UITextField!
+    @IBOutlet var advanceConfigApplyBtn: UIButton!
+    
+    @IBOutlet var otaCell: UITableViewCell!
+    
     var enabledExerciseModes: [SMDeviceExerciseMode] = []
     
     var isAerobicEnabled = true
     var isMuscleEnabled = true
     var isMassageEnabled = true
-    
+    fileprivate var _isEditing = false
     /// 当前运行模式
     var currentRunMode: SMDeviceRunMode = SMDeviceRunMode.none {
         didSet {
@@ -115,6 +124,10 @@ class ConnectedViewController: UITableViewController {
             make.center.equalToSuperview()
         }
         
+        if (SMEmsManager.defaultManager.currentDevice?.fwVersion ?? 0) > 1.7 {
+            presetConfigTF.text = String(format: "%d", SMEmsManager.defaultManager.currentDevice?.presetConfigIndex ?? -1)
+        }
+        
         // 初始默认强度
         setIntensity(intensity: 1, sendCmd: false)
         // 初始默认工作状态
@@ -141,6 +154,9 @@ class ConnectedViewController: UITableViewController {
             massageSwitch.isOn = true
         }
         #endif
+        
+        presetConfigTF.delegate = self
+        
         
         // 初始化模式
         updateEnbaleExerciseModes(sendCmd: false, animated: false)
@@ -278,6 +294,55 @@ class ConnectedViewController: UITableViewController {
         }
     }
     
+    @IBAction func onConfigApply(_ sender: UIButton) {
+        let index = Int(presetConfigTF.text ?? "") ?? -1
+        if index < 0 || index > 7 {
+            showMessage("请输入正确的配置编号(0~7)")
+            return
+        }
+        SMEmsManager.defaultManager.currentDevice?.setPresetConfig(index, completion: nil)
+        showMessage("设置成功")
+    }
+    
+    @IBAction func onOTABtn(_ sender: UIButton) {
+        debugPrint("onOTABtn")
+        guard let otaPath = Bundle.main.path(forResource: "EMS_HW1001_SW1704", ofType: "smbin") else {
+            BLELog("升级文件不存在")
+            showMessage("升级文件不存在")
+            return
+        }
+        guard let otaData = try? Data(contentsOf: URL(fileURLWithPath: otaPath)) else {
+            BLELog("升级包读取失败")
+            showMessage("升级包读取失败")
+            return
+        }
+        
+        BLELog("准备升级")
+        showWaitting("准备升级")
+        SMEmsManager.defaultManager.currentDevice?.startOTA(data: otaData, fail: { [weak self] errorDesc in
+            BLELog(errorDesc ?? "")
+            DispatchQueue.main.async {
+                self?.hideHUD()
+                self?.showMessage("升级失败: \(errorDesc ?? "")")
+            }
+        }, progress: { [weak self] progress in
+            BLELog("Progress...\(progress!)")
+            DispatchQueue.main.async {
+                self?.showProgressHUD(title: "正在升级", subtitle: String(format: "%d%%", Int(roundf(progress! * 100))))
+            }
+        }, completion: { [weak self] in
+            BLELog("升级成功")
+            DispatchQueue.main.async {
+//                self?.hideHUD()
+                self?.showMessage("升级成功", duration: 2.0)
+                SMEmsManager.defaultManager.disconnectCurrentDevice()
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now()+2.0) {
+                self?.navigationController?.popViewController(animated: true)
+            }
+        })
+    }
+    
     // MARK: - Private
     let map32To9: [Int: Int] = [
         1:1, 2:1, 3:1,
@@ -361,6 +426,8 @@ class ConnectedViewController: UITableViewController {
     enum CellInfo: Int {
         case name = 0
         case sn
+        case hwVersion
+        case fwVersion
         case battery
         case runMode
         case excerciseMode
@@ -368,6 +435,7 @@ class ConnectedViewController: UITableViewController {
         case chargeState
         case hubState
         case remainSeconds
+        case presetConfig
         case end
     }
     enum CellAction: Int {
@@ -377,6 +445,8 @@ class ConnectedViewController: UITableViewController {
         case runMode
         case modeEnableSetting
         case extendModeCell
+        case advanceConfigCell
+        case otaCell = 7
         case end
     }
     
@@ -405,6 +475,10 @@ class ConnectedViewController: UITableViewController {
                 cell.textLabel?.text = "设备名称: xxx"
             case .sn:
                 cell.textLabel?.text = "设备SN: xxx"
+            case .hwVersion:
+                cell.textLabel?.text = "硬件版本: xxx"
+            case .fwVersion:
+                cell.textLabel?.text = "固件版本: xxx"
             case .battery:
                 cell.textLabel?.text = "剩余电量: xxx"
             case .runMode:
@@ -419,7 +493,8 @@ class ConnectedViewController: UITableViewController {
                 cell.textLabel?.text = "底座状态: xxx"
             case .remainSeconds:
                 cell.textLabel?.text = "剩余运动时长(设备内计时器): xxx"
-                
+            case .presetConfig:
+                cell.textLabel?.text = "预设配置编号: xxx"
             default:
                 break
             }
@@ -432,6 +507,10 @@ class ConnectedViewController: UITableViewController {
                 cell.textLabel?.text = "设备名称: \(device.name)"
             case .sn:
                 cell.textLabel?.text = "设备SN: \(device.sn)"
+            case .hwVersion:
+                cell.textLabel?.text = "硬件版本: \(device.hwVersion)"
+            case .fwVersion:
+                cell.textLabel?.text = "固件版本: \(device.fwVersion)"
             case .battery:
                 cell.textLabel?.text = "剩余电量: \(device.battery)"
             case .runMode:
@@ -446,15 +525,16 @@ class ConnectedViewController: UITableViewController {
                 cell.textLabel?.text = "底座状态: \(device.hubState)"
             case .remainSeconds:
                 cell.textLabel?.text = "剩余运动时长(设备内计时器): \(device.remainSeconds)"
-                
+            case .presetConfig:
+                cell.textLabel?.text = "预设配置编号: \(device.presetConfigIndex)"
             default:
                 break
             }
             #endif
 
-            
             return cell
         }else if indexPath.section == 1 {
+            
             switch CellAction.init(rawValue: indexPath.row) {
             case .excerciseMode:
                 return exerciseModeCell
@@ -468,6 +548,18 @@ class ConnectedViewController: UITableViewController {
                 return modeEnableSettingCell
             case .extendModeCell:
                 return extendModeCell
+            case .advanceConfigCell:
+                if ((SMEmsManager.defaultManager.currentDevice?.fwVersion ?? 0.0) > 1.7) {
+                    // 低固件版本不支持预设配置参数
+                    advanceConfigApplyBtn.isEnabled = true
+                    presetConfigTF.isEnabled = true
+                }else {
+                    advanceConfigApplyBtn.isEnabled = false
+                    presetConfigTF.isEnabled = false
+                }
+                return advanceConfigCell
+            case .otaCell:
+                return otaCell
             default:
                 break
             }
@@ -480,7 +572,100 @@ class ConnectedViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             tableView.deselectRow(at: indexPath, animated: false)
+            testAPI()
         }
+    }
+    
+    func testAPI() {
+        debugPrint("testAPI>>>")
+        
+        DispatchQueue.global(qos: .default).async {
+            let device = SMEmsManager.defaultManager.currentDevice!
+            
+            device.setVoltageConfig(0, completion: nil)
+            device.readPresetConfig { isSuccessfully, errorCode, errorDesc, value in
+                assert(device.presetConfigIndex == 0xF0, "setVoltageConfig Error1! \(device.presetConfigIndex)")
+            }
+            Thread.sleep(forTimeInterval: 0.3)
+                        
+            device.setVoltageConfig(7, completion: nil)
+            device.readPresetConfig { isSuccessfully, errorCode, errorDesc, value in
+                assert(device.presetConfigIndex == 0xF7, "setVoltageConfig Error2! \(device.presetConfigIndex)")
+            }
+            Thread.sleep(forTimeInterval: 0.3)
+
+            device.setPresetConfig(0, completion: nil)
+            device.readPresetConfig { isSuccessfully, errorCode, errorDesc, value in
+                assert(device.presetConfigIndex==0x00, "setPresetConfig Error1! \(device.presetConfigIndex)")
+            }
+            Thread.sleep(forTimeInterval: 0.3)
+
+            device.setPresetConfig(7, completion: nil)
+            device.readPresetConfig { isSuccessfully, errorCode, errorDesc, value in
+                assert(device.presetConfigIndex==0x07, "setPresetConfig Error1! \(device.presetConfigIndex)")
+            }
+            Thread.sleep(forTimeInterval: 0.3)
+
+            device.setMinPWConfig(10, completion: nil)
+            device.readMinPWConfig { isSuccessfully, errorCode, errorDesc, value in
+                assert(value == 10, "setMinPWConfig Error1! \(value!)")
+            }
+            Thread.sleep(forTimeInterval: 0.3)
+            
+            device.setMinPWConfig(250, completion: nil)
+            device.readMinPWConfig { isSuccessfully, errorCode, errorDesc, value in
+                assert(value == 250, "setMinPWConfig Error1! \(value!)")
+            }
+            Thread.sleep(forTimeInterval: 0.3)
+
+            device.setMaxPWConfig(40, completion: nil)
+            device.readMaxPWConfig { isSuccessfully, errorCode, errorDesc, value in
+                assert(value == 40, "setMaxPWConfig Error1! \(value!)")
+            }
+            Thread.sleep(forTimeInterval: 0.3)
+
+            device.setMaxPWConfig(300, completion: nil)
+            device.readMaxPWConfig { isSuccessfully, errorCode, errorDesc, value in
+                assert(value == 300, "setMaxPWConfig Error1! \(value!)")
+            }
+            Thread.sleep(forTimeInterval: 0.3)
+
+            device.setAscPWConfig(2, completion: nil)
+            device.readAscPWConfig { isSuccessfully, errorCode, errorDesc, value in
+                assert(value == 2, "setAscPWConfig Error1! \(value!)")
+            }
+            Thread.sleep(forTimeInterval: 0.3)
+            
+            device.setAscPWConfig(250, completion: nil)
+            device.readAscPWConfig { isSuccessfully, errorCode, errorDesc, value in
+                assert(value == 250, "setAscPWConfig Error1! \(value!)")
+            }
+            Thread.sleep(forTimeInterval: 0.3)
+            
+            device.setNormalPWConfig(10, completion: nil)
+            device.readNormalPWConfig { isSuccessfully, errorCode, errorDesc, value in
+                assert(value == 10, "setNormalPWConfig Error1! \(value!)")
+            }
+            Thread.sleep(forTimeInterval: 0.3)
+            
+            device.setNormalPWConfig(300, completion: nil)
+            device.readNormalPWConfig { isSuccessfully, errorCode, errorDesc, value in
+                assert(value == 300, "setNormalPWConfig Error1! \(value!)")
+            }
+            Thread.sleep(forTimeInterval: 0.3)
+
+            BLELog("Run All Test Finished.")
+        }
+    }
+    
+    // MARK: - UITextFieldDelegate
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        _isEditing = true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        _isEditing = false
+        tableView.reloadData()
     }
 }
 
@@ -504,7 +689,7 @@ extension ConnectedViewController: SMEmsManagerDelegate {
         debugPrint("正在重连...")
         showWaitting("正在重连...")
     }
-    
+
     func didConnectedDevice(bleDevice: SMEmsDevice?, error: Error?) {
         debugPrint("设备连接成功/重连成功")
         showMessage("设备连接成功/重连成功")
@@ -520,7 +705,6 @@ extension ConnectedViewController: SMEmsManagerDelegate {
         debugPrint(desc)
         showMessage(desc)
     }
-    
 }
 
 extension ConnectedViewController: SMEmsDeviceDelegate {
@@ -553,7 +737,10 @@ extension ConnectedViewController: SMEmsDeviceDelegate {
             setIntensity(intensity: device.intensity.toInt(), sendCmd: false)
         }
         
-        tableView.reloadData()
+        if !_isEditing {
+            tableView.reloadData()
+        }
+        
         
 //        tableView.beginUpdates()
 //        tableView.reloadSection(0, with: UITableView.RowAnimation.fade)
@@ -660,3 +847,56 @@ extension ConnectedViewController {
         }
     }
 }
+
+public extension UIViewController {
+
+    func showProgressHUD(title: String?, subtitle: String?) {
+        if PKHUD.sharedHUD.contentView.isKind(of: PKHUDProgressView.self) {
+            let view = PKHUD.sharedHUD.contentView as! PKHUDProgressView
+            view.titleLabel.text = title
+            view.subtitleLabel.text = subtitle
+            if view.superview?.superview?.superview?.superview != self.view.window {
+                PKHUD.sharedHUD.show(onView: self.view.window)
+            }
+            return
+        }else {
+            hideHUD()
+        }
+        PKHUD.sharedHUD.contentView = PKHUDProgressView.init(title: title, subtitle: subtitle)
+        PKHUD.sharedHUD.show(onView: self.view.window)
+    }
+}
+
+public extension UIViewController {
+    func showMessage(_ message: String) {
+        self.showMessage(message, duration: 1.5)
+    }
+    
+    func showMessage(_ message: String, duration: Double) {
+        PKHUD.sharedHUD.contentView = PKHUDTextView.init(text: message)
+        PKHUD.sharedHUD.show(onView: self.view.window)
+        PKHUD.sharedHUD.hide(afterDelay: duration)
+    }
+    
+    func showWaitting() {
+        PKHUD.sharedHUD.contentView = PKHUDProgressView.init(title: nil, subtitle: nil)
+        PKHUD.sharedHUD.show(onView: self.view.window)
+    }
+    
+    func showWaitting(_ description: String?) {
+        PKHUD.sharedHUD.contentView = GLHUDLoadingView.init(description: description)
+        PKHUD.sharedHUD.gracePeriod = 0.2
+        PKHUD.sharedHUD.show(onView: self.view.window)
+    }
+    
+    func hideHUD(anim: Bool = false) {
+        PKHUD.sharedHUD.hide(anim)
+    }
+    
+    func hideHUD(_ delay: Double) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay) {
+            PKHUD.sharedHUD.hide()
+        }
+    }
+}
+

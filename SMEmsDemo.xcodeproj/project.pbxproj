@@ -10,6 +10,7 @@
 		0509BCE8560F3BBE3D96E164 /* Pods_SMEmsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1352F39F1225B9A351B2EF4 /* Pods_SMEmsDemo.framework */; };
 		2A5464947D80E851832A4245 /* Pods_SMEmsDemo_SMEmsDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29F3CD01DC885FE83B7ACA6E /* Pods_SMEmsDemo_SMEmsDemoUITests.framework */; };
 		B16458596FF1A97AFA7D67F4 /* Pods_SMEmsDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA12BDC41B771BD3662AAE1 /* Pods_SMEmsDemoTests.framework */; };
+		CDEBA34E062A4D9C3428565A /* Pods_SMEmsDemoOC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8FDD25C04318A833BED479 /* Pods_SMEmsDemoOC.framework */; };
 		E21E7DC325F8B74400E22BBD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E21E7DC225F8B74400E22BBD /* Launch Screen.storyboard */; };
 		E249527D25F07A3E0087EEBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249527C25F07A3E0087EEBA /* AppDelegate.swift */; };
 		E249528425F07A3E0087EEBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E249528225F07A3E0087EEBA /* Main.storyboard */; };
@@ -19,6 +20,14 @@
 		E249539925F622AA0087EEBA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249539825F622AA0087EEBA /* MainViewController.swift */; };
 		E249539F25F709290087EEBA /* SearchDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249539E25F709290087EEBA /* SearchDeviceViewController.swift */; };
 		E24953AD25F7165E0087EEBA /* ConnectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24953AC25F7165E0087EEBA /* ConnectedViewController.swift */; };
+		E2684192265F479300CC7717 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E2684191265F479300CC7717 /* AppDelegate.m */; };
+		E268419B265F479300CC7717 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2684199265F479300CC7717 /* Main.storyboard */; };
+		E268419D265F479500CC7717 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E268419C265F479500CC7717 /* Assets.xcassets */; };
+		E26841A0265F479500CC7717 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E268419E265F479500CC7717 /* LaunchScreen.storyboard */; };
+		E26841A3265F479500CC7717 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E26841A2265F479500CC7717 /* main.m */; };
+		E26841AD265F479500CC7717 /* SMEmsDemoOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E26841AC265F479500CC7717 /* SMEmsDemoOCTests.m */; };
+		E26841B8265F479500CC7717 /* SMEmsDemoOCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E26841B7265F479500CC7717 /* SMEmsDemoOCUITests.m */; };
+		E26841D4265F496400CC7717 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E26841D3265F496400CC7717 /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +44,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = E249527825F07A3E0087EEBA;
 			remoteInfo = SMEmsDemo;
+		};
+		E26841A9265F479500CC7717 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E249527125F07A3E0087EEBA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E268418D265F479300CC7717;
+			remoteInfo = SMEmsDemoOC;
+		};
+		E26841B4265F479500CC7717 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E249527125F07A3E0087EEBA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E268418D265F479300CC7717;
+			remoteInfo = SMEmsDemoOC;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -55,10 +78,13 @@
 		012DE38A73DAEA18CEB9D130 /* Pods-SMEmsDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMEmsDemoTests.release.xcconfig"; path = "Target Support Files/Pods-SMEmsDemoTests/Pods-SMEmsDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		08F5CEEA2A95F3A6C2FB7B14 /* Pods-SMEmsDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMEmsDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-SMEmsDemoTests/Pods-SMEmsDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		29F3CD01DC885FE83B7ACA6E /* Pods_SMEmsDemo_SMEmsDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SMEmsDemo_SMEmsDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E8FDD25C04318A833BED479 /* Pods_SMEmsDemoOC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SMEmsDemoOC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		469DAA1D674BF32A65C73BE6 /* Pods-SMEmsDemo-SMEmsDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMEmsDemo-SMEmsDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-SMEmsDemo-SMEmsDemoUITests/Pods-SMEmsDemo-SMEmsDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E8A0F57B50EAC8F144B945E /* Pods-SMEmsDemo-SMEmsDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMEmsDemo-SMEmsDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-SMEmsDemo-SMEmsDemoUITests/Pods-SMEmsDemo-SMEmsDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6BC0BCC33828E08FF173DAF0 /* Pods-SMEmsDemoOC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMEmsDemoOC.release.xcconfig"; path = "Target Support Files/Pods-SMEmsDemoOC/Pods-SMEmsDemoOC.release.xcconfig"; sourceTree = "<group>"; };
 		78B7394942E00CCDA63957D4 /* Pods-SMEmsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMEmsDemo.release.xcconfig"; path = "Target Support Files/Pods-SMEmsDemo/Pods-SMEmsDemo.release.xcconfig"; sourceTree = "<group>"; };
 		9AA12BDC41B771BD3662AAE1 /* Pods_SMEmsDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SMEmsDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8455F5A4FED3C59D5A359E2 /* Pods-SMEmsDemoOC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMEmsDemoOC.debug.xcconfig"; path = "Target Support Files/Pods-SMEmsDemoOC/Pods-SMEmsDemoOC.debug.xcconfig"; sourceTree = "<group>"; };
 		B1352F39F1225B9A351B2EF4 /* Pods_SMEmsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SMEmsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB483771BA521CB9CB0C316 /* Pods-SMEmsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMEmsDemo.debug.xcconfig"; path = "Target Support Files/Pods-SMEmsDemo/Pods-SMEmsDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		E21E7DC225F8B74400E22BBD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -76,6 +102,22 @@
 		E249539825F622AA0087EEBA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E249539E25F709290087EEBA /* SearchDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDeviceViewController.swift; sourceTree = "<group>"; };
 		E24953AC25F7165E0087EEBA /* ConnectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedViewController.swift; sourceTree = "<group>"; };
+		E268418E265F479300CC7717 /* SMEmsDemoOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMEmsDemoOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2684190265F479300CC7717 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E2684191265F479300CC7717 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E268419A265F479300CC7717 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E268419C265F479500CC7717 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E268419F265F479500CC7717 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E26841A1265F479500CC7717 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E26841A2265F479500CC7717 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E26841A8265F479500CC7717 /* SMEmsDemoOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMEmsDemoOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E26841AC265F479500CC7717 /* SMEmsDemoOCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMEmsDemoOCTests.m; sourceTree = "<group>"; };
+		E26841AE265F479500CC7717 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E26841B3265F479500CC7717 /* SMEmsDemoOCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMEmsDemoOCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E26841B7265F479500CC7717 /* SMEmsDemoOCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMEmsDemoOCUITests.m; sourceTree = "<group>"; };
+		E26841B9265F479500CC7717 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E26841D2265F496400CC7717 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		E26841D3265F496400CC7717 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +145,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E268418B265F479300CC7717 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDEBA34E062A4D9C3428565A /* Pods_SMEmsDemoOC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E26841A5265F479500CC7717 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E26841B0265F479500CC7717 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -115,6 +179,8 @@
 				5E8A0F57B50EAC8F144B945E /* Pods-SMEmsDemo-SMEmsDemoUITests.release.xcconfig */,
 				08F5CEEA2A95F3A6C2FB7B14 /* Pods-SMEmsDemoTests.debug.xcconfig */,
 				012DE38A73DAEA18CEB9D130 /* Pods-SMEmsDemoTests.release.xcconfig */,
+				A8455F5A4FED3C59D5A359E2 /* Pods-SMEmsDemoOC.debug.xcconfig */,
+				6BC0BCC33828E08FF173DAF0 /* Pods-SMEmsDemoOC.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -125,6 +191,7 @@
 				B1352F39F1225B9A351B2EF4 /* Pods_SMEmsDemo.framework */,
 				29F3CD01DC885FE83B7ACA6E /* Pods_SMEmsDemo_SMEmsDemoUITests.framework */,
 				9AA12BDC41B771BD3662AAE1 /* Pods_SMEmsDemoTests.framework */,
+				3E8FDD25C04318A833BED479 /* Pods_SMEmsDemoOC.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -135,6 +202,9 @@
 				E249527B25F07A3E0087EEBA /* SMEmsDemo */,
 				E249529225F07A400087EEBA /* SMEmsDemoTests */,
 				E249529D25F07A400087EEBA /* SMEmsDemoUITests */,
+				E268418F265F479300CC7717 /* SMEmsDemoOC */,
+				E26841AB265F479500CC7717 /* SMEmsDemoOCTests */,
+				E26841B6265F479500CC7717 /* SMEmsDemoOCUITests */,
 				E249527A25F07A3E0087EEBA /* Products */,
 				1D0A55783A2F4CBB6F2BA377 /* Pods */,
 				9E7B03D13A9CB64602A151EB /* Frameworks */,
@@ -147,6 +217,9 @@
 				E249527925F07A3E0087EEBA /* SMEmsDemo.app */,
 				E249528F25F07A400087EEBA /* SMEmsDemoTests.xctest */,
 				E249529A25F07A400087EEBA /* SMEmsDemoUITests.xctest */,
+				E268418E265F479300CC7717 /* SMEmsDemoOC.app */,
+				E26841A8265F479500CC7717 /* SMEmsDemoOCTests.xctest */,
+				E26841B3265F479500CC7717 /* SMEmsDemoOCUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,6 +255,40 @@
 				E24952A025F07A400087EEBA /* Info.plist */,
 			);
 			path = SMEmsDemoUITests;
+			sourceTree = "<group>";
+		};
+		E268418F265F479300CC7717 /* SMEmsDemoOC */ = {
+			isa = PBXGroup;
+			children = (
+				E2684190265F479300CC7717 /* AppDelegate.h */,
+				E2684191265F479300CC7717 /* AppDelegate.m */,
+				E2684199265F479300CC7717 /* Main.storyboard */,
+				E268419C265F479500CC7717 /* Assets.xcassets */,
+				E268419E265F479500CC7717 /* LaunchScreen.storyboard */,
+				E26841A1265F479500CC7717 /* Info.plist */,
+				E26841A2265F479500CC7717 /* main.m */,
+				E26841D2265F496400CC7717 /* MainViewController.h */,
+				E26841D3265F496400CC7717 /* MainViewController.m */,
+			);
+			path = SMEmsDemoOC;
+			sourceTree = "<group>";
+		};
+		E26841AB265F479500CC7717 /* SMEmsDemoOCTests */ = {
+			isa = PBXGroup;
+			children = (
+				E26841AC265F479500CC7717 /* SMEmsDemoOCTests.m */,
+				E26841AE265F479500CC7717 /* Info.plist */,
+			);
+			path = SMEmsDemoOCTests;
+			sourceTree = "<group>";
+		};
+		E26841B6265F479500CC7717 /* SMEmsDemoOCUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E26841B7265F479500CC7717 /* SMEmsDemoOCUITests.m */,
+				E26841B9265F479500CC7717 /* Info.plist */,
+			);
+			path = SMEmsDemoOCUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +353,61 @@
 			productReference = E249529A25F07A400087EEBA /* SMEmsDemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		E268418D265F479300CC7717 /* SMEmsDemoOC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E26841C0265F479500CC7717 /* Build configuration list for PBXNativeTarget "SMEmsDemoOC" */;
+			buildPhases = (
+				07690F3047809E93EE0A1CE5 /* [CP] Check Pods Manifest.lock */,
+				E268418A265F479300CC7717 /* Sources */,
+				E268418B265F479300CC7717 /* Frameworks */,
+				E268418C265F479300CC7717 /* Resources */,
+				EB490B071332036887365B82 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SMEmsDemoOC;
+			productName = SMEmsDemoOC;
+			productReference = E268418E265F479300CC7717 /* SMEmsDemoOC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E26841A7265F479500CC7717 /* SMEmsDemoOCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E26841C1265F479500CC7717 /* Build configuration list for PBXNativeTarget "SMEmsDemoOCTests" */;
+			buildPhases = (
+				E26841A4265F479500CC7717 /* Sources */,
+				E26841A5265F479500CC7717 /* Frameworks */,
+				E26841A6265F479500CC7717 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E26841AA265F479500CC7717 /* PBXTargetDependency */,
+			);
+			name = SMEmsDemoOCTests;
+			productName = SMEmsDemoOCTests;
+			productReference = E26841A8265F479500CC7717 /* SMEmsDemoOCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E26841B2265F479500CC7717 /* SMEmsDemoOCUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E26841C2265F479500CC7717 /* Build configuration list for PBXNativeTarget "SMEmsDemoOCUITests" */;
+			buildPhases = (
+				E26841AF265F479500CC7717 /* Sources */,
+				E26841B0265F479500CC7717 /* Frameworks */,
+				E26841B1265F479500CC7717 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E26841B5265F479500CC7717 /* PBXTargetDependency */,
+			);
+			name = SMEmsDemoOCUITests;
+			productName = SMEmsDemoOCUITests;
+			productReference = E26841B3265F479500CC7717 /* SMEmsDemoOCUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -266,6 +428,17 @@
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = E249527825F07A3E0087EEBA;
 					};
+					E268418D265F479300CC7717 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					E26841A7265F479500CC7717 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = E268418D265F479300CC7717;
+					};
+					E26841B2265F479500CC7717 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = E268418D265F479300CC7717;
+					};
 				};
 			};
 			buildConfigurationList = E249527425F07A3E0087EEBA /* Build configuration list for PBXProject "SMEmsDemo" */;
@@ -284,6 +457,9 @@
 				E249527825F07A3E0087EEBA /* SMEmsDemo */,
 				E249528E25F07A400087EEBA /* SMEmsDemoTests */,
 				E249529925F07A400087EEBA /* SMEmsDemoUITests */,
+				E268418D265F479300CC7717 /* SMEmsDemoOC */,
+				E26841A7265F479500CC7717 /* SMEmsDemoOCTests */,
+				E26841B2265F479500CC7717 /* SMEmsDemoOCUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -313,9 +489,55 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E268418C265F479300CC7717 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E26841A0265F479500CC7717 /* LaunchScreen.storyboard in Resources */,
+				E268419D265F479500CC7717 /* Assets.xcassets in Resources */,
+				E268419B265F479300CC7717 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E26841A6265F479500CC7717 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E26841B1265F479500CC7717 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		07690F3047809E93EE0A1CE5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SMEmsDemoOC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1B10E22A363383E7FD06455B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -399,6 +621,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EB490B071332036887365B82 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SMEmsDemoOC/Pods-SMEmsDemoOC-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SMEmsDemoOC/Pods-SMEmsDemoOC-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SMEmsDemoOC/Pods-SMEmsDemoOC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F2C63994AD55932AF0C06404 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -446,6 +685,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E268418A265F479300CC7717 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2684192265F479300CC7717 /* AppDelegate.m in Sources */,
+				E26841D4265F496400CC7717 /* MainViewController.m in Sources */,
+				E26841A3265F479500CC7717 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E26841A4265F479500CC7717 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E26841AD265F479500CC7717 /* SMEmsDemoOCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E26841AF265F479500CC7717 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E26841B8265F479500CC7717 /* SMEmsDemoOCUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -459,6 +724,16 @@
 			target = E249527825F07A3E0087EEBA /* SMEmsDemo */;
 			targetProxy = E249529B25F07A400087EEBA /* PBXContainerItemProxy */;
 		};
+		E26841AA265F479500CC7717 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E268418D265F479300CC7717 /* SMEmsDemoOC */;
+			targetProxy = E26841A9265F479500CC7717 /* PBXContainerItemProxy */;
+		};
+		E26841B5265F479500CC7717 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E268418D265F479300CC7717 /* SMEmsDemoOC */;
+			targetProxy = E26841B4265F479500CC7717 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -468,6 +743,22 @@
 				E249528325F07A3E0087EEBA /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E2684199265F479300CC7717 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E268419A265F479300CC7717 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E268419E265F479500CC7717 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E268419F265F479500CC7717 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -781,6 +1072,122 @@
 			};
 			name = Release;
 		};
+		E26841BA265F479500CC7717 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8455F5A4FED3C59D5A359E2 /* Pods-SMEmsDemoOC.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GA3E2USY25;
+				INFOPLIST_FILE = SMEmsDemoOC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.simo.iapdemo.SMEmsDemoOC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E26841BB265F479500CC7717 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BC0BCC33828E08FF173DAF0 /* Pods-SMEmsDemoOC.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GA3E2USY25;
+				INFOPLIST_FILE = SMEmsDemoOC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.simo.iapdemo.SMEmsDemoOC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E26841BC265F479500CC7717 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GA3E2USY25;
+				INFOPLIST_FILE = SMEmsDemoOCTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.simo.iapdemo.SMEmsDemoOCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SMEmsDemoOC.app/SMEmsDemoOC";
+			};
+			name = Debug;
+		};
+		E26841BD265F479500CC7717 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GA3E2USY25;
+				INFOPLIST_FILE = SMEmsDemoOCTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.simo.iapdemo.SMEmsDemoOCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SMEmsDemoOC.app/SMEmsDemoOC";
+			};
+			name = Release;
+		};
+		E26841BE265F479500CC7717 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GA3E2USY25;
+				INFOPLIST_FILE = SMEmsDemoOCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.simo.iapdemo.SMEmsDemoOCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SMEmsDemoOC;
+			};
+			name = Debug;
+		};
+		E26841BF265F479500CC7717 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GA3E2USY25;
+				INFOPLIST_FILE = SMEmsDemoOCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.simo.iapdemo.SMEmsDemoOCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SMEmsDemoOC;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -816,6 +1223,33 @@
 			buildConfigurations = (
 				E24952AA25F07A400087EEBA /* Debug */,
 				E24952AB25F07A400087EEBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E26841C0265F479500CC7717 /* Build configuration list for PBXNativeTarget "SMEmsDemoOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E26841BA265F479500CC7717 /* Debug */,
+				E26841BB265F479500CC7717 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E26841C1265F479500CC7717 /* Build configuration list for PBXNativeTarget "SMEmsDemoOCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E26841BC265F479500CC7717 /* Debug */,
+				E26841BD265F479500CC7717 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E26841C2265F479500CC7717 /* Build configuration list for PBXNativeTarget "SMEmsDemoOCUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E26841BE265F479500CC7717 /* Debug */,
+				E26841BF265F479500CC7717 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
