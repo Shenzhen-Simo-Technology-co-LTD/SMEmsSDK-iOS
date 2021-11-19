@@ -3,6 +3,17 @@
 
  A iOS SDK and Demo to Control SIMO EMS Device via BLE.
 
+## VersionLog
+
+|version|log|
+|:-:|:-:|
+|1.1.0| Add OTA and presetConfig API|
+|1.0.4| Fixed SN comparing in scanAndConnectDevice missing last 2chars, and fixed timeout param not apply.|
+|1.0.3| Delay 1600ms to call discoverService after BLE be connected.|
+|1.0.2| Fixed SN missing last 2 chars.|
+|1.0.1| Fixed EMS Device's remain exercise second error.|
+|1.0.0|First version|
+
 ## Installation
 
 > pod 'SMEmsSDK', :git => "https://github.com/Shenzhen-Simo-Technology-co-LTD/SMEmsSDK-iOS.git"

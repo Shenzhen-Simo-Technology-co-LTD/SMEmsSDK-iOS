@@ -11,6 +11,7 @@
 		2A5464947D80E851832A4245 /* Pods_SMEmsDemo_SMEmsDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29F3CD01DC885FE83B7ACA6E /* Pods_SMEmsDemo_SMEmsDemoUITests.framework */; };
 		B16458596FF1A97AFA7D67F4 /* Pods_SMEmsDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA12BDC41B771BD3662AAE1 /* Pods_SMEmsDemoTests.framework */; };
 		CDEBA34E062A4D9C3428565A /* Pods_SMEmsDemoOC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8FDD25C04318A833BED479 /* Pods_SMEmsDemoOC.framework */; };
+		E214E403274743620003B81A /* EMS_HW1001_SW1704.smbin in Resources */ = {isa = PBXBuildFile; fileRef = E214E402274743620003B81A /* EMS_HW1001_SW1704.smbin */; };
 		E21E7DC325F8B74400E22BBD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E21E7DC225F8B74400E22BBD /* Launch Screen.storyboard */; };
 		E249527D25F07A3E0087EEBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E249527C25F07A3E0087EEBA /* AppDelegate.swift */; };
 		E249528425F07A3E0087EEBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E249528225F07A3E0087EEBA /* Main.storyboard */; };
@@ -87,6 +88,7 @@
 		A8455F5A4FED3C59D5A359E2 /* Pods-SMEmsDemoOC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMEmsDemoOC.debug.xcconfig"; path = "Target Support Files/Pods-SMEmsDemoOC/Pods-SMEmsDemoOC.debug.xcconfig"; sourceTree = "<group>"; };
 		B1352F39F1225B9A351B2EF4 /* Pods_SMEmsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SMEmsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB483771BA521CB9CB0C316 /* Pods-SMEmsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SMEmsDemo.debug.xcconfig"; path = "Target Support Files/Pods-SMEmsDemo/Pods-SMEmsDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E214E402274743620003B81A /* EMS_HW1001_SW1704.smbin */ = {isa = PBXFileReference; lastKnownFileType = file; path = EMS_HW1001_SW1704.smbin; sourceTree = "<group>"; };
 		E21E7DC225F8B74400E22BBD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E249527925F07A3E0087EEBA /* SMEmsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMEmsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E249527C25F07A3E0087EEBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +198,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E214E401274743620003B81A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E214E402274743620003B81A /* EMS_HW1001_SW1704.smbin */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		E249527025F07A3E0087EEBA = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +237,7 @@
 		E249527B25F07A3E0087EEBA /* SMEmsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E214E401274743620003B81A /* Resources */,
 				E249527C25F07A3E0087EEBA /* AppDelegate.swift */,
 				E249528225F07A3E0087EEBA /* Main.storyboard */,
 				E249528525F07A400087EEBA /* Assets.xcassets */,
@@ -469,6 +480,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E214E403274743620003B81A /* EMS_HW1001_SW1704.smbin in Resources */,
 				E21E7DC325F8B74400E22BBD /* Launch Screen.storyboard in Resources */,
 				E249528625F07A400087EEBA /* Assets.xcassets in Resources */,
 				E249528425F07A3E0087EEBA /* Main.storyboard in Resources */,
@@ -1086,6 +1098,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.simo.iapdemo.SMEmsDemoOC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1106,6 +1119,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.simo.iapdemo.SMEmsDemoOC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
