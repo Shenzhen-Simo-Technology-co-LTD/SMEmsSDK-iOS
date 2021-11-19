@@ -572,7 +572,7 @@ class ConnectedViewController: UITableViewController, UITextFieldDelegate {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
             tableView.deselectRow(at: indexPath, animated: false)
-            testAPI()
+//            testAPI()
         }
     }
     
